@@ -22,7 +22,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar, setIsLoggedIn }) => {
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    localStorage.clear();
     if (setIsLoggedIn) setIsLoggedIn(false);
     router.push("/login");
   };

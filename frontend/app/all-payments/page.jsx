@@ -72,7 +72,7 @@ const AllPaymentsPage = () => {
                         {payment.websiteUrl}
                       </a>
                     </td>
-                    <td className="p-2 border">{payment.paidAmount}</td>
+                    <td className="p-2 border">${payment.paidAmount}</td>
                     <td className="p-2 border">
                       {new Date(payment.paymentDate).toLocaleDateString()}
                     </td>

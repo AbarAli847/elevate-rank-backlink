@@ -12,6 +12,7 @@ export default function LayoutWrapper({ children }) {
     '/admin-dashboard',
     '/add-website',
     '/all-websites',
+    '/all-payments'
   ];
 
   // Also hide on dynamic route like /edit-website/:id

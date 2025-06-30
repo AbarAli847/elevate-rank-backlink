@@ -32,6 +32,8 @@ const Login = () => {
     // Store token and status in localStorage
     localStorage.setItem("token", token);
     localStorage.setItem("status", user.status);
+     localStorage.setItem("name", user.name);     // ✅ Store user's name
+    localStorage.setItem("email", user.email);   // ✅ Store user's email
 
     // Redirect based on status
     if (user.status === "admin") {

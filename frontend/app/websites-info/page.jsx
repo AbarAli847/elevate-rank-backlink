@@ -42,28 +42,23 @@ const AllWebsites = () => {
         const order = await actions.order.capture();
         alert("Payment successful!");
 
-        // After payment success, insert details into the database
-        // Define the website details from the selected website
-        // Retrieve user object from localStorage
-        const user = JSON.parse(localStorage.getItem("user"));
+      const name = localStorage.getItem("name");
+const email = localStorage.getItem("email");
 
-        // Check if user object exists and contains username and email
-        if (!user || !user.name || !user.email) {
-          alert("User information is missing. Please log in.");
-          return; // Exit if username or email is missing
-        }
+if (!name || !email) {
+  alert("User information is missing. Please log in.");
+  return;
+}
 
-        // Extract username and email from the user object
-        const username = user.name;
-        const email = user.email;
+const websiteDetails = {
+  username: name,
+  email: email,
+  websiteName: selectedWebsite.name,
+  websiteUrl: selectedWebsite.url,
+  paidAmount: selectedWebsite.price || "9.98",
+};
 
-        const websiteDetails = {
-          username: username,  // Use the username
-          email: email,        // Use the email
-          websiteName: selectedWebsite.name,
-          websiteUrl: selectedWebsite.url,
-          paidAmount: selectedWebsite.price || "9.98", // Default to 9.98 if no price
-        };
+
 
         try {
           // Make an API call to your backend to save the payment details
